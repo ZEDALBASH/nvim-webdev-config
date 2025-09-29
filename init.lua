@@ -33,7 +33,7 @@ if not vim.loop.fs_stat(lazypath) then
     { "saadparwaiz1/cmp_luasnip" },
     { "mattn/emmet-vim"},
     { "windwp/nvim-ts-autotag"},
-    { "windwp/autopairs"},
+    { "windwp/nvim-autopairs"},
     -- Colors themes 
     { "Mofiqul/vscode.nvim"},
     -- Syntax highlighting
