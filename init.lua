@@ -31,13 +31,16 @@ if not vim.loop.fs_stat(lazypath) then
     { "L3MON4D3/LuaSnip" },
     { "rafamadriz/friendly-snippets" },
     { "saadparwaiz1/cmp_luasnip" },
-    { "mattn/emmet-vim"},
-    { "windwp/nvim-ts-autotag"},
-    { "windwp/nvim-autopairs"},
     -- Colors themes 
     { "Mofiqul/vscode.nvim"},
     -- Syntax highlighting
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    
+    -- autotag
+    { "windwp/nvim-autopairs" },
+    { "mattn/emmet-vim" },
+    { "windwp/nvim-ts-autotag"},
+
 
     -- Fuzzy Finder
     { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
@@ -111,6 +114,16 @@ cmp.setup({
   })
 
   vim.keymap.set("n", "<Leader>t",":NvimTreeToggle<CR>", {noremap = true , silent = true})
+
+  -- ========================
+  -- autotags
+  -- ========================
+
+  require("nvim-autopairs").setup({
+    check_ts = true
+  })
+  
+  require("nvim-ts-autotag").setup({})
   -- ========================
   -- Telescope
   -- ========================
