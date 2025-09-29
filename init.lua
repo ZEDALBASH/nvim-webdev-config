@@ -7,6 +7,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
+vim.g.mapleader = " "
 -- ========================
 -- Lazy.nvim (Plugin Manager)
 -- ========================
@@ -107,6 +108,7 @@ cmp.setup({
       
   })
 
+  vim.keymap.set("n", "<Leader>t",":NvimTreeToggle<CR>", {noremap = true , silent = true})
   -- ========================
   -- Telescope
   -- ========================
