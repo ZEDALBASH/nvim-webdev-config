@@ -36,6 +36,7 @@ if not vim.loop.fs_stat(lazypath) then
     { "Mofiqul/vscode.nvim"},
     -- Syntax highlighting
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    -- Discord rich presencs or "cord.nvim"
     {"vyfor/cord.nvim", bulid = ":Cord update"}, 
     -- autotag
     { "windwp/nvim-autopairs" },
