@@ -8,6 +8,7 @@ vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.g.mapleader = " "
+
 -- ========================
 -- Lazy.nvim (Plugin Manager)
 -- ========================
@@ -35,7 +36,7 @@ if not vim.loop.fs_stat(lazypath) then
     { "Mofiqul/vscode.nvim"},
     -- Syntax highlighting
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    
+    {"vyfor/cord.nvim", bulid = ":Cord update"}, 
     -- autotag
     { "windwp/nvim-autopairs" },
     { "mattn/emmet-vim" },
