@@ -42,7 +42,8 @@ if not vim.loop.fs_stat(lazypath) then
     { "windwp/nvim-autopairs" },
     { "mattn/emmet-vim" },
     { "windwp/nvim-ts-autotag"},
-
+    -- quick comment plugin
+    { "numToStr/Comment.nvim"},
 
     -- Fuzzy Finder
     { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
@@ -54,7 +55,7 @@ if not vim.loop.fs_stat(lazypath) then
     
     -- Formatters
     {"mhartington/formatter.nvim"},
-  })
+})
 
   -- ========================
   -- Plugins Config
@@ -64,7 +65,7 @@ if not vim.loop.fs_stat(lazypath) then
 -- Mason
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "ts_ls", "html", "cssls", "jsonls", "eslint" },
+  ensure_installed = { "ts_ls", "html", "cssls", "jsonls", "eslint", " prettier" },
 })
 
 -- LSP (Neovim 0.11+ API)
