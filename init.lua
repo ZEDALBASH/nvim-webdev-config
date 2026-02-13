@@ -99,7 +99,7 @@ cmp.setup({
   -- ========================
   -- Treesitter
   -- ========================
-  require("nvim-treesitter.configs").setup({
+  require("nvim-treesitter").setup({
     ensure_installed = { "lua", "javascript", "typescript", "tsx", "json", "css", "html" },
     highlight = { enable = true },
     view = {mapping = {
