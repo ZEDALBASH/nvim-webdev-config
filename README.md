@@ -1,11 +1,14 @@
 Setup:
+
 1- copy init.lua and paste it inside the neovim config (linux: /home/user/.config/nvim or windows: C:\users\yourusername\AppData\Local\nvim)
+
 2- start up nvim and it will set up by itself with lazy.nvim
 
 
 NOTE: this is not a project its just configs that i made personally and posted them for others who want a ready to go neovim configs
 
 The configs:
+
 All the configs are for web development 
 
 lsp servers for html css tl_ls typescript and javascript
