@@ -30,7 +30,10 @@ Note:you can find which themes are there run colorscheme and press tab it will s
 
  
 Those configs are still under development i'm working on them this is why it looks messy here a bit:")
+
 any suggestions or packages you guys would think would be good for me or you suggest them in discussions
+
 Thanks for reading
+
 Have fun:)))
 
