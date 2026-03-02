@@ -64,8 +64,9 @@ if not vim.loop.fs_stat(lazypath) then
   -- ========================
   -- Plugins Config
   -- ========================
-  -- Theme
-  vim.cmd.colorscheme("vim")
+
+
+
 -- Mason
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -154,13 +155,10 @@ cmp.setup({
 -- ========================
 -- Theme / Colors
 -- =======================
+vim.cmd.colorscheme("tokyonight")
 
-vim.cmd.colorscheme("vscode")
-vim.cmd([[highlight Normal guibg=#1a1a1a guifg=#00ff00
-highlight NormalNC guibg=#1a1a1a guifg=#00ff00
-highlight NvimTreeNormal guibg=#1a1a1a guifg=#00FF00
-highlight NvimTreeVertSplit guibg=#1a1a1a guifg=#00FF00
-highlight NvimTreeEndOfBuffer guibg=#1a1a1a guifg=#00FF00]])
+
+
 
 -- =======================
 -- Formatter.nvim
