@@ -29,15 +29,18 @@ if not vim.loop.fs_stat(lazypath) then
     { "williamboman/mason-lspconfig.nvim" },
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
-    { "L3MON4D3/LuaSnip" },
+    { "L3MON4D3/LuaSnip", dependencies = {"rafamadriz/friendly-snippets",}, config = function()
+    require("luasnip.loaders.from_vscode").lazy_load()
+  end, },
     { "rafamadriz/friendly-snippets" },
-    { "saadparwaiz1/cmp_luasnip" },
+    { "saadparwaiz1/cmp_luasnip" }, 
     -- Colors themes 
     { "Mofiqul/vscode.nvim"},
     -- Syntax highlighting
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     -- Discord rich presencs or "cord.nvim"
-    {"vyfor/cord.nvim", bulid = ":Cord update"}, 
+    {"vyfor/cord.nvim", bulid = ":Cord update"},
+
     -- autotag
     { "windwp/nvim-autopairs" },
     { "mattn/emmet-vim" },
@@ -55,6 +58,7 @@ if not vim.loop.fs_stat(lazypath) then
     
     -- Formatters
     {"mhartington/formatter.nvim"},
+    {"stevearc/conform.nvim"},
 })
 
   -- ========================
@@ -66,6 +70,12 @@ if not vim.loop.fs_stat(lazypath) then
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = { "ts_ls", "html", "cssls", "jsonls", "eslint", " prettier" },
+})
+require("conform").setup({
+  formatters_by_ft = {
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+  },
 })
 
 -- LSP (Neovim 0.11+ API)
