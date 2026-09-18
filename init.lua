@@ -67,7 +67,7 @@ if not vim.loop.fs_stat(lazypath) then
 -- Mason
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "ts_ls", "html", "cssls", "jsonls", "eslint" },
+  ensure_installed = { "ts_ls", "html", "cssls", "jsonls", "eslint", "clangd"},
 })
 
 -- LSP (Neovim 0.11+ API)
@@ -78,13 +78,13 @@ vim.lsp.config.html = { capabilities = capabilities }
 vim.lsp.config.cssls = { capabilities = capabilities }
 vim.lsp.config.jsonls = { capabilities = capabilities }
 vim.lsp.config.eslint = { capabilities = capabilities }
-
+vim.lsp.config.clangd = { capabilities = capabilites }
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("html")
 vim.lsp.enable("cssls")
 vim.lsp.enable("jsonls")
 vim.lsp.enable("eslint")
-
+vim.lsp.enable("clangd")
 -- Autocompletion (cmp)
 local cmp = require("cmp")
 cmp.setup({
@@ -102,7 +102,7 @@ cmp.setup({
   -- Treesitter
   -- ========================
   require("nvim-treesitter").setup({
-    ensure_installed = { "lua", "javascript", "typescript", "tsx", "json", "css", "html" },
+    ensure_installed = { "lua", "javascript", "typescript", "tsx", "json", "css", "html", "clangd" },
     highlight = { enable = true },
     view = {mapping = {
     list = {
@@ -165,6 +165,8 @@ require("conform").setup({
 		css = {"prettier"},
 		json = {"prettier"},
 		lua = {"stylua"},
+    c = {"clang-format"},
+    cpp = {"clang-format"},
 	},
 	format_on_save = {
 	timeout_ms = 500, 
