@@ -38,8 +38,6 @@ if not vim.loop.fs_stat(lazypath) then
     { "Mofiqul/vscode.nvim"},
     -- Syntax highlighting
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    -- Discord rich presencs or "cord.nvim"
-    {"vyfor/cord.nvim", bulid = ":Cord update"},
 
     -- autotag
     { "windwp/nvim-autopairs" },
@@ -57,7 +55,6 @@ if not vim.loop.fs_stat(lazypath) then
     { "folke/tokyonight.nvim" },
     
     -- Formatters
-    {"mhartington/formatter.nvim"},
     {"stevearc/conform.nvim"},
 })
 
@@ -70,13 +67,7 @@ if not vim.loop.fs_stat(lazypath) then
 -- Mason
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "ts_ls", "html", "cssls", "jsonls", "eslint", " prettier" },
-})
-require("conform").setup({
-  formatters_by_ft = {
-    javascript = { "prettier" },
-    typescript = { "prettier" },
-  },
+  ensure_installed = { "ts_ls", "html", "cssls", "jsonls", "eslint" },
 })
 
 -- LSP (Neovim 0.11+ API)
@@ -157,51 +148,29 @@ cmp.setup({
 -- =======================
 vim.cmd.colorscheme("tokyonight")
 
-
-
-
 -- =======================
--- Formatter.nvim
--- =======================   
-local prettier = vim.fn.expand("~/.local/share/nvim/mason/bin/prettier")
-
-require("formatter").setup({
-  logging = true,  -- turn on logging to see errors
-  filetype = {
-    javascript = {
-      function()
-      return {
-        exe = prettier,
-        args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
-                           stdin = true,
-      }
-      end
-    },
-    typescript = {
-      function()
-      return {
-        exe = prettier,
-        args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
-                           stdin = true,
-      }
-      end
-    },
-    typescriptreact = {
-      function()
-      return {
-        exe = prettier,
-        args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
-                           stdin = true,
-      }
-      end
-    },
-  }
-})
+-- conform
+-- =======================
 
 
--- Auto-format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function() vim.cmd("Format") end,
-})
+
+
+require("conform").setup({
+	formatters_by_ft = { 
+		javascript = { "prettier" },
+		javascriptreact = { "prettier" },
+		typescript = {"prettier"},
+		typescriptreact = {"prettier"}, 
+		html = {"prettier"},
+		css = {"prettier"},
+		json = {"prettier"},
+		lua = {"stylua"},
+	},
+	format_on_save = {
+	timeout_ms = 500, 
+	lsp_format = "fallback",
+},})
+
+
+
 
