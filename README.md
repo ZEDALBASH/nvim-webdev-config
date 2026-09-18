@@ -9,19 +9,25 @@ NOTE: this is not a project its just configs that i made personally and posted t
 
 The configs:
 
-All the configs are for web development 
+most of the configs are for webdevelopment
 
-lsp servers for html css tl_ls typescript and javascript
+lsp servers are:
+html
+css
+javascript
+typescript
+javascriptreact
+typescriptreact
+clangd(cpp,c)
+
 
 and also a Formatter which is prettier
 
-Note: you might have to install prettier with node npm i -g prettier DO THIS IF IT WASN'T INSTALLED BY CONFORM AUTOMATICALLY
+Note: you might have to install prettier with node npm i -g prettier DO THIS IF IT WASN'T INSTALLED BY MASON AUTOMATICALLY
 
 and a file exploerer ui 
 
 Note: moving between ui windows are by Ctrl+w and then move to the side you want to be on 
-
-there is also a discord rich presence you can remove it from the code itself to delete it or disable it by running ":Cord disable" in editor commands
 
 the themes and colors could be changed from the colors configs part its a comment named "Themes / colors" change colors from there
 
